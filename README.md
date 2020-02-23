@@ -101,4 +101,4 @@ modules: [{
 ## Special Thanks
 
 - [Michael Teeuw](https://github.com/MichMich) for creating the awesome [MagicMirror2](https://github.com/MichMich/MagicMirror/tree/develop) project that made this module possible.
-- [tkoeberl](https://github.com/tkoeberl) for creating the initial module that I used as guidance in creating this module.
+- [leinich](https://github.com/leinich) for creating the initial module that I used as guidance in creating this module.
