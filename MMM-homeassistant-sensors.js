@@ -52,7 +52,8 @@ Module.register("MMM-homeassistant-sensors", {
         for (var i = 0; i < values.length; i++) {
           var icons = values[i].icons[0];
           var sensor = values[i].sensor;
-          var val = this.getValue(data, sensor);
+          var attributes = values[i].attributes;
+          var val = this.getValue(data, sensor, attributes);
           var name = this.getName(data, sensor);
           var unit = this.getUnit(data, sensor);
           var alertThreshold = values[i].alertThreshold;
@@ -79,10 +80,23 @@ Module.register("MMM-homeassistant-sensors", {
     }
     return wrapper;
   },
-  getValue: function(data, value) {
+  getValue: function(data, value, attributes=[]) {
     for (var i = 0; i < data.length; i++) {
       if (data[i].entity_id == value) {
-        return data[i].state;
+        if(attributes.length==0) {
+          return data[i].state;
+        }
+        var returnString = ' | ';
+        for(var j=0; j<attributes.length; j++) {
+          if(attributes[j] == 'state') {
+            returnString += data[i].state + ' | ';
+          } else {
+            if(data[i]['attributes'][attributes[j]] !== undefined) {
+              returnString += data[i]['attributes'][attributes[j]] + ' | ';
+            }
+          }
+        }
+        return returnString.slice(0, -3);
       }
     }
     return null;

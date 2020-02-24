@@ -5,10 +5,10 @@ It can display information from [Home Assistant](https://home-assistant.io/) usi
 
 ## Installation
 
-Navigate into your MagicMirror's `modules` folder and clone this repository:  
+Navigate into your MagicMirror's `modules` folder and clone this repository:
 `cd ~/MagicMirror/modules && git clone https://github.com/leinich/MMM-homeassistant-sensors.git`
 
-If you want to use icons for the sensors download the `MaterialDesignIcons` webfont from https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip and unzip the folder:  
+If you want to use icons for the sensors download the `MaterialDesignIcons` webfont from https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip and unzip the folder:
 `cd ~/MagicMirror/modules/MMM-homeassistant-sensors && wget https://github.com/Templarian/MaterialDesign-Webfont/archive/master.zip && unzip master.zip`
 
 ## Configuration
@@ -34,11 +34,12 @@ It is very simple to set up this module, a sample configuration looks like this:
 
 ## values option
 
-| Option           | Description                                                                                                                                |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `sensor`         | `entity_id` from Home Assistant. Please have a look at the states pages for the unique `entity_id` of your sensor                          |
-| `alertThreshold` | As soon as the measured value of the sensor exceeds the configured threshold, the entry will begin to 'blink'. <br><br> **Default:** `off` |
-| `icons`          | Icons object for the on/off status of sensor. see: [MaterialDesignIcons](https://materialdesignicons.com/)                                 |
+| Option           | Description                                                                                                                                                                                                 |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sensor`         | `entity_id` from Home Assistant. Please have a look at the states pages for the unique `entity_id` of your sensor                                                                                           |
+| `alertThreshold` | As soon as the measured value of the sensor exceeds the configured threshold, the entry will begin to 'blink'. <br><br> **Default:** `off`                                                                  |
+| `attributes`     | Array of sensor attributes to show. If not set, only show sensor state. If set, you can add as many attributes as you want, if you want to show the state as well add `'state'`. <br><br> **Default:** `[]` |
+| `icons`          | Icons object for the on/off status of sensor. see: [MaterialDesignIcons](https://materialdesignicons.com/)                                                                                                  |
 
 ## icons option
 
