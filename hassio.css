@@ -7,3 +7,7 @@
     opacity: 0;
   }
 }
+
+.MMM-homeassistant-sensors {
+    max-width: 300px;
+}
