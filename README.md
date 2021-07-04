@@ -37,6 +37,7 @@ It is very simple to set up this module, a sample configuration looks like this:
 | Option           | Description                                                                                                                                                                                                 |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `sensor`         | `entity_id` from Home Assistant. Please have a look at the states pages for the unique `entity_id` of your sensor                                                                                           |
+| `name`           | The name of the value to display. If you omit this, `friendly_name` from Home Assistant will be displayed.                                                                                                  |
 | `alertThreshold` | As soon as the measured value of the sensor exceeds the configured threshold, the entry will begin to 'blink'. <br><br> **Default:** `off`                                                                  |
 | `attributes`     | Array of sensor attributes to show. If not set, only show sensor state. If set, you can add as many attributes as you want, if you want to show the state as well add `'state'`. <br><br> **Default:** `[]` |
 | `icons`          | Icons object for the on/off status of sensor. see: [MaterialDesignIcons](https://materialdesignicons.com/)                                                                                                  |
@@ -74,6 +75,7 @@ modules: [{
 					]
 				}, {
 					sensor: "binary_sensor.sensor",
+					name: "Hallway Sensor",
 					icons: [{
 							"state_off": "run",
 							"state_on": "run-fast"

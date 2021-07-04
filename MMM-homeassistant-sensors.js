@@ -54,7 +54,7 @@ Module.register("MMM-homeassistant-sensors", {
           var sensor = values[i].sensor;
           var attributes = values[i].attributes;
           var val = this.getValue(data, sensor, attributes);
-          var name = this.getName(data, sensor);
+          var name = this.getName(data, values[i]);
           var unit = this.getUnit(data, sensor);
           var alertThreshold = values[i].alertThreshold;
           if (val) {
@@ -113,8 +113,13 @@ Module.register("MMM-homeassistant-sensors", {
     return "";
   },
   getName: function(data, value) {
+    //use the name from config if set
+    if (value.name && value.name !== "")
+      return value.name;
+
+    //find the sensor by entity_id and get it's friendly_name
     for (var i = 0; i < data.length; i++) {
-      if (data[i].entity_id == value) {
+      if (data[i].entity_id === value.sensor) {
         return data[i].attributes.friendly_name;
       }
     }
