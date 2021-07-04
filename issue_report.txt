@@ -1,0 +1,13 @@
+Sorry for what looks like a PR but is actuall an issue. 
+There is no way to report issues on your repo...
+MM  v2.16.0 no longer starts for me because of your module:
+```
+ [02.07.2021 15:04.54.518] [ERROR] Error: Cannot find module 'request'                                                                                        |
+| Require stack:                                                                                                                                               |
+| - /opt/magic_mirror/modules/MMM-homeassistant-sensors/node_helper.js     
+```
+The runtime dependency request was removed from core MagicMirror in version v2.16.0 (and replaced because it is deprecated).
+Can you please fix your repo accordingly?
+(as a workaround I had to manually install request (npm install request)
+
+Thanks
