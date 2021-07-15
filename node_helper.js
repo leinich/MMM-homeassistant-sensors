@@ -1,5 +1,5 @@
 var NodeHelper = require('node_helper');
-const got = require('got');
+var got = require('got');
 
 module.exports = NodeHelper.create({
   start: function () {
